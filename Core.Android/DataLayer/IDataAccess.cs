@@ -2,20 +2,16 @@ using System;
 using System.Collections.Generic;
 using Core.Android.Models;
 using System.Linq.Expressions;
+using System.Threading.Tasks;
 
-namespace Core.Android.Data
-{
+namespace Core.Android.Data {
 	public interface IDataAccess {
-		void getVisits (Expression<Func<Visit, bool>> predicate, Delegate cb);
+		Task<Dictionary<Type, int>> CreateTables();
 
-		void addVisit (Visit visit, Delegate cb);
+		Task<List<Visit>> GetVisits(Expression<Func<Visit, bool>> predicate);
 
-		void deleteVisit (Expression<Func<Visit, bool>> predicate, Delegate cb);
+		Task<int> AddVisit(Visit visit);
 
-		void getFriends (Expression<Func<Friend, bool>> predicate, Delegate cb);
-
-		void addFriend (Friend friend, Delegate cb);
-
-		void deleteFriend (Expression<Func<Visit, bool>> predicate, Delegate cb);
+		Task<int> DeleteVisit(Visit visit);
 	}
 }

@@ -14,6 +14,7 @@
     <AndroidResgenFile>Resources\Resource.designer.cs</AndroidResgenFile>
     <AndroidResgenClass>Resource</AndroidResgenClass>
     <AssemblyName>Core.Android</AssemblyName>
+    <TargetFrameworkVersion>v4.2</TargetFrameworkVersion>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -40,6 +41,7 @@
     <Reference Include="System.Xml" />
     <Reference Include="System.Core" />
     <Reference Include="Mono.Android" />
+    <Reference Include="Xamarin.Android.NUnitLite" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Resources\Resource.designer.cs" />
@@ -50,7 +52,8 @@
     <Compile Include="DataLayer\SQLiteAsync.cs" />
     <Compile Include="Models\BaseModel.cs" />
     <Compile Include="DataLayer\IDataAccess.cs" />
-    <Compile Include="DataLayer\SqliteAPI.cs" />
+    <Compile Include="Test\TestSQLiteAPI.cs" />
+    <Compile Include="DataLayer\SQLiteAPI.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\AboutResources.txt" />
@@ -63,5 +66,6 @@
   <ItemGroup>
     <Folder Include="Models\" />
     <Folder Include="DataLayer\" />
+    <Folder Include="Test\" />
   </ItemGroup>
 </Project>
